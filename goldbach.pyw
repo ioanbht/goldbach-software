@@ -9,15 +9,12 @@ def Tester():
         messagebox.showerror("Champ vide", "Veuillez saisir un nombre")
     else:
         try:
-            assert int(nombre.get())%2 == 0         
+            assert int(nombre.get())%2 == 0 and int(nombre.get()) > 3         
         except ValueError:
-            messagebox.showerror("Saisie invalide", "Veuillez saisir un nombre")
+            messagebox.showerror("Saisie invalide", "Veuillez saisir un nombre entier")
         except AssertionError:
-            messagebox.showerror("Nombre invalide", "Veuillez saisir un nombre pair")
+            messagebox.showerror("Nombre invalide", "Votre nombre est impair et/ou inférieur à 3")
         else:
-            if int(nombre.get()) < 3:
-                messagebox.showerror("Nombre invalide", "Veuillez saisir un nombre supérieur à 3")
-            else:
 
 
                 nb_premier = 2
@@ -45,7 +42,7 @@ def Tester():
                 del combinaisons[-1], combinaisons[0]
                 combinaisons = " ".join(combinaisons)
 
-                messagebox.showinfo("Solution(s) de la conjecture", f"{nombre.get()} = {combinaisons}")
+                messagebox.showinfo("Solution(s) de la conjecture", f"{int(nombre.get())} = {combinaisons}")
                         
                     
 
